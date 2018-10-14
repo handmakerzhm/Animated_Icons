@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+        <title> ANIMATED ICONS </title>
+        <style>
+            #link, #battery, #hourglass  {
+                font-size: 100px;
+                color: green;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                }
+
+                .footer {
+                    text-align: center;
+                    margin-top: 30px;
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+                }
+           
+        </style>
+    
+    </head>
+
+    <body>
+        <div id="link" class="fa"></div>
+
+        <br>
+        <br>
+
+        <div id="battery" class="fa"></div>
+
+        <br>
+        <br>
+
+        <div id="hourglass" class="fa"></div>
+
+
+        <footer class="footer">Animated Icons</footer>
+        
+        <script>
+            //brake chain animation: created function
+            function brakeLink(){
+                let link= document.getElementById('link');          //targets the id
+                link.innerHTML="&#xf0c1;";                           // tagets id in the document with the icon
+                                                                //next step is calling the function
+                setTimeout(function(){                                  // how long the animations lasts
+                    link.innerHTML="&#xf127;";                          //broken link thats located outside of current document
+                }, 1000);
+            }
+            // call animation: initialize the state
+            brakeLink();
+
+            //animate every 2 seconds: the loop of the animation
+            setInterval(brakeLink,2000);
+
+
+            /*Battery animation*/
+
+            function chargeBattery(){
+                let battery= document.getElementById('battery');
+                battery.innerHTML="&#xf244;";
+
+           setTimeout(function(){
+               battery.innerHTML="&#xf243;";
+           }, 1000);
+            
+
+             setTimeout(function(){
+               battery.innerHTML="&#xf242;";
+           }, 2000);
+
+             setTimeout(function(){
+               battery.innerHTML="&#xf241;";
+           }, 3000);
+
+             setTimeout(function(){
+               battery.innerHTML="&#xf240;";
+           }, 4000);
+           
+            }
+            
+            //runs animation
+            chargeBattery();
+
+             setInterval(chargeBattery,5000);
+
+
+            // HOURGLASS
+            function hourglassFill(){
+                let hourglass= document.getElementById('hourglass');
+                hourglass.innerHTML="&#xf251;";
+
+             setTimeout(function(){
+               hourglass.innerHTML="&#xf252;";
+            }, 1000);
+            
+            setTimeout(function(){
+               hourglass.innerHTML="&#xf253;";
+           }, 2000);
+
+            }
+
+            hourglassFill();
+
+             setInterval(hourglassFill,3000);
+        
+        </script>
+    </body>
+</html>
